@@ -10,9 +10,18 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/ico" href="logo.ico">
   <style>  
-    #popup {  
-      display: none;  
+    #overlay {  
       position: fixed;  
+      top: 0;  
+      left: 0;  
+      width: 100%;  
+      height: 100%;  
+      background-color: rgba(0, 0, 0, 0.5);  
+      display: none;  
+    }  
+  
+    #popup {  
+      position: absolute;  
       top: 50%;  
       left: 50%;  
       transform: translate(-50%, -50%);  
@@ -24,46 +33,43 @@
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  
     }  
   
-    #popup h2 {  
-      margin-top: 0;  
-      font-size: 24px;  
-      color: #333;  
-    }  
-  
-    #popup p {  
-      font-size: 16px;  
-      line-height: 1.5;  
-      margin-bottom: 10px;  
-      color: #666;  
-    }  
-  
     #close-btn {  
       position: absolute;  
       top: 10px;  
       right: 10px;  
       cursor: pointer;  
     }  
-  </style>  
+  </style>     
 </head>
 
 <body>
+  <div id="overlay"></div>  
   <div id="popup">  
-    <h2>最新公告</h2>  
-    <p>因为种种原因，导致服务器无法继续运营，服务器将开启无限期关服，谢谢各位玩家一直以来的支持！</p>  
-    <button id="close-btn" onclick="closePopup()">关闭</button>  
+    <h2>公告</h2>  
+    <p>因为一些事情，导致服务器无限期关闭，感谢玩家们的支持！</p>  
+    <button id="close-btn" onclick="closePopup()">Close</button>  
   </div>  
-
+  
   <script>  
     function openPopup() {  
+      document.getElementById('overlay').style.display = 'block';  
       document.getElementById('popup').style.display = 'block';  
     }  
   
     function closePopup() {  
+      document.getElementById('overlay').style.display = 'none';  
       document.getElementById('popup').style.display = 'none';  
+    }  
+  
+    window.onload = function() {  
+      document.getElementById('overlay').addEventListener('click', function(event) {  
+        if (event.target === this) {  
+          closePopup();  
+        }  
+      });  
     }  
   </script>  
   
-  <button onclick="openPopup()">Open Popup</button>  
   
   <div class="js-animsition animsition" id="site-wrap" data-animsition-in-class="fade-in"
     data-animsition-out-class="fade-out">
