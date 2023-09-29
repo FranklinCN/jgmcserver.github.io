@@ -9,10 +9,62 @@
     content="极光Minecarft服务器,极光游戏,Ji Guang Games,极光工作室,极光Minecarft服务器,我的世界服务器,我的世界,MineCraft服务器,我的世界中文版服务器,Mc服务器">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/ico" href="logo.ico">
+  <style>  
+    #popup {  
+      display: none;  
+      position: fixed;  
+      top: 50%;  
+      left: 50%;  
+      transform: translate(-50%, -50%);  
+      width: 300px;  
+      padding: 20px;  
+      background-color: #f1f1f1;  
+      border: 1px solid #ccc;  
+      border-radius: 5px;  
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  
+    }  
+  
+    #popup h2 {  
+      margin-top: 0;  
+      font-size: 24px;  
+      color: #333;  
+    }  
+  
+    #popup p {  
+      font-size: 16px;  
+      line-height: 1.5;  
+      margin-bottom: 10px;  
+      color: #666;  
+    }  
+  
+    #close-btn {  
+      position: absolute;  
+      top: 10px;  
+      right: 10px;  
+      cursor: pointer;  
+    }  
+  </style>  
 </head>
 
 <body>
+  <div id="popup">  
+    <h2>最新公告</h2>  
+    <p>因为种种原因，导致服务器无法继续运营，服务器将开启无限期关服，谢谢各位玩家一直以来的支持！</p>  
+    <button id="close-btn" onclick="closePopup()">关闭</button>  
+  </div>  
 
+  <script>  
+    function openPopup() {  
+      document.getElementById('popup').style.display = 'block';  
+    }  
+  
+    function closePopup() {  
+      document.getElementById('popup').style.display = 'none';  
+    }  
+  </script>  
+  
+  <button onclick="openPopup()">Open Popup</button>  
+  
   <div class="js-animsition animsition" id="site-wrap" data-animsition-in-class="fade-in"
     data-animsition-out-class="fade-out">
 
