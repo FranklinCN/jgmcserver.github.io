@@ -43,32 +43,8 @@
 </head>
 
 <body>
-  <div id="overlay"></div>  
-  <div id="popup">  
-    <h2>公告</h2>  
-    <p>因为一些事情，导致服务器无限期关闭，感谢玩家们的支持！</p>  
-    <button id="close-btn" onclick="closePopup()">Close</button>  
-  </div>  
+    
   
-  <script>  
-    function openPopup() {  
-      document.getElementById('overlay').style.display = 'block';  
-      document.getElementById('popup').style.display = 'block';  
-    }  
-  
-    function closePopup() {  
-      document.getElementById('overlay').style.display = 'none';  
-      document.getElementById('popup').style.display = 'none';  
-    }  
-  
-    window.onload = function() {  
-      document.getElementById('overlay').addEventListener('click', function(event) {  
-        if (event.target === this) {  
-          closePopup();  
-        }  
-      });  
-    }  
-  </script>  
   
   
   <div class="js-animsition animsition" id="site-wrap" data-animsition-in-class="fade-in"
